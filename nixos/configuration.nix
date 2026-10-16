@@ -50,13 +50,15 @@
   #for nvim
   programs.nix-ld.enable = true;
 
+# Enable Niri
+programs.niri.enable = true;
   
 # Enable Hyprland
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
+#  programs.hyprland = {
+#    enable = true;
+#    withUWSM = true;
+#    xwayland.enable = true;
+#  };
 
   xdg.portal.config.hyprland = {
   "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
