@@ -8,10 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/codecs.nix
       ./modules/fish.nix
       ./modules/nvidia.nix
       ./modules/ly.nix
       ./modules/performance.nix
+      ./modules/programming.nix
       ./modules/steam.nix
     ];
 
@@ -47,23 +49,17 @@
   
   services.upower.enable = true;
   
-  #for nvim
+  #for Nix-ID
   programs.nix-ld.enable = true;
 
-# Enable Niri
-programs.niri.enable = true;
   
-# Enable Hyprland
-#  programs.hyprland = {
-#    enable = true;
-#    withUWSM = true;
-#    xwayland.enable = true;
-#  };
+# Enable Niri
+  programs.niri.enable = true;
 
-  xdg.portal.config.hyprland = {
-  "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
-  };
-
+#   xdg.portal.config.niri = {
+#   "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
+#   };
+# 
   # Enable Fstrim
   services.fstrim.enable = true;
 
@@ -143,19 +139,7 @@ programs.niri.enable = true;
     brave
     quickshell
     motrix
-
-    # Programming stuffs
-    gcc 
-    gnumake 
-    cmake 
-    gdb
-    python3 
-    rustc
-    cargo
-    rust-analyzer
-    rustfmt
-    clippy
-    zed-editor
+    xwayland-satellite
     qbittorrent
 
     # Terminal Stuffs
