@@ -1,16 +1,17 @@
+
 {
   description = "Pragesh's NixOS Flake Configuration";
 
   inputs = {
-    nixpkgs.url = "git+https://github.com/nixos/nixpkgs?ref=nixos-unstable&shallow=1";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "git+https://github.com/nix-community/home-manager?ref=master&shallow=1";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -33,3 +34,4 @@
     };
   };
 }
+

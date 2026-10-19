@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/codecs.nix
+      # ./modules/codecs.nix
       ./modules/fish.nix
       ./modules/nvidia.nix
       ./modules/ly.nix
