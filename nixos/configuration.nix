@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./modules/codecs.nix
       ./modules/fish.nix
+      ./modules/minecraft.nix
       ./modules/nvidia.nix
       ./modules/ly.nix
       ./modules/performance.nix
