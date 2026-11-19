@@ -38,7 +38,7 @@ let
     export __NV_PRIME_RENDER_OFFLOAD=1
     export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
-    exec ${pkgs.jdk21}/bin/java \
+    exec ${pkgs.jdk25}/bin/java \
       -Djdk.gtk.version=3 \
       -jar /mnt/D/GAMES/SKlauncher-3.2.18.jar "$@"
   '';
