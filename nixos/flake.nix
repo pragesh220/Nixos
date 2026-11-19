@@ -25,9 +25,9 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+	  home-manager.backupFileExtension = "backup";   # add this line
 
           home-manager.extraSpecialArgs = { inherit inputs; };
-
           home-manager.users.pragesh220 = import ./home.nix;
         }
       ];

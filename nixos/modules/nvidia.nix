@@ -27,6 +27,7 @@
       offload = {
         enable = true;
         enableOffloadCmd = true;
+        offloadCmdMainProgram = "prime-run";
       };
 
       intelBusId = "PCI:0@0:2:0";

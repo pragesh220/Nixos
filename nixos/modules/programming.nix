@@ -16,6 +16,7 @@
     rustfmt
     clippy
     zed-editor
+    jdk25
 
   ];
 }

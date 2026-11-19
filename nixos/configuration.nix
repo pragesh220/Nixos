@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./modules/codecs.nix
+      ./modules/codecs.nix
       ./modules/fish.nix
       ./modules/nvidia.nix
       ./modules/ly.nix
@@ -175,10 +175,10 @@
    ]; 
 
    # Automatically mount secondary HDD on boot
-  fileSystems."/run/media/pragesh220/D" = {
+  fileSystems."/mnt/D" = {
     device = "/dev/disk/by-uuid/98d7baf9-06fa-4a9b-86e3-543b24b5674b";
     fsType = "ext4";
-    options = [ "defaults" "nofail" ];
+    options = [ "defaults" "nofail" "noatime" "x-gvfs-show" ];
   };  
 
  # Virtualization related

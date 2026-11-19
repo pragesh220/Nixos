@@ -24,21 +24,18 @@
         renice = 10;
         softrealtime = "auto";
       };
-      # Uncomment the gpu section only if you want aggressive GPU boosts
-      # gpu = {
-      #   apply_gpu_optimisations = "accept-responsibility";
-      #   gpu_device = 0;
-      #   amd_performance_level = "high";   # only for AMD
-      # };
     };
   };
 
   programs.gamescope.enable = true;
 
   # Custom eBPF CPU Scheduler (scx_lavd is great for gaming)
-  services.scx = {
+  services.scx-loader = {
     enable = true;
-    scheduler = "scx_lavd";
+    config = {
+      default_sched = "scx_lavd";
+      default_mode = "Gaming"; # Auto, Gaming, LowLatency, PowerSave, Server
+    };
   };
 
   # Gaming & Performance Tools
